@@ -1,6 +1,6 @@
 package P_P_312.controller;
 
-import P_P_312.Service.UserService;
+import P_P_312.service.UserServiceImp;
 import P_P_312.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
-    private final UserService userService;
+    private final UserServiceImp userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserServiceImp userService) {
         this.userService = userService;
     }
 
