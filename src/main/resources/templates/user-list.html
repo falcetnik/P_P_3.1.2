@@ -18,8 +18,16 @@
         <td th:text="${user.name}"></td>
         <td th:text="${user.lastName}"></td>
         <td th:text="${user.email}"></td>
-        <td><a th:href="@{user-update/{id}(id = ${user.id})}">Edit</a></td>
-        <td><a th:href="@{user-delete/{id}(id = ${user.id})}">Delete</a></td>
+        <td>
+            <form action="#" th:method="GET" th:action="@{user-update/{id}(id = ${user.id})}" th:object="${user}">
+                <input type="submit" value="Edit">
+            </form>
+        </td>
+        <td>
+            <form action="#" th:method="DELETE" th:action="@{user-delete/{id}(id = ${user.id})}" th:object="${user}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
     </tr>
 </table>
 <div>
